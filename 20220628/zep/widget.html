@@ -1,0 +1,47 @@
+<html style="overflow: hidden;">
+    <head>
+        <style type="text/css">
+            .quiz {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-top: 200px;
+                font-size: 13px;
+                max-height: 80px;
+                height: 100%;
+                border: 3px solid #6758FF;
+                border-radius: 8px;
+                background: #fff;
+                font-family: sans-serif, Arial;
+                font-weight: bold;
+                text-align: center;
+            }
+        
+            #question {
+                font-size: 12px;
+                font-weight: bold;
+            }
+            
+            #answer {
+                font-size: 16px;
+                font-weight: bold;
+                color: #6758FF;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.addEventListener('message', function(e) {
+                const { question, answer } = e.data;
+
+                document.getElementById("question").innerHTML = question;
+                document.getElementById("answer").innerHTML = answer;
+            });
+        
+        </script>
+        <div class="quiz">
+          <div id="question"></div>
+          <div id="answer"></div>
+        </div> 
+    </body>
+</html>
